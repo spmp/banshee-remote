@@ -24,8 +24,6 @@ import android.widget.SeekBar;
 import android.widget.SeekBar.OnSeekBarChangeListener;
 import android.widget.TextView;
 
-import com.bugsense.trace.BugSenseHandler;
-
 import de.viktorreiser.bansheeremote.R;
 import de.viktorreiser.bansheeremote.data.App;
 import de.viktorreiser.bansheeremote.data.BansheeConnection;
@@ -285,17 +283,7 @@ public class CurrentSongActivity extends Activity implements OnBansheeServerChec
 	protected void onCreate(Bundle bundle) {
 		mInstance = this;
 		super.onCreate(bundle);
-		
-		// release debug key
-		// Don't use this while working on code. It's there for release so we know that someone
-		// produced a crash on a released version. When modifying the code here use the testing key,
-		// we don't want bugs you produced your self.
-		// BugSenseHandler.setup(this, "8edaa907");
-		
-		// testing debug key
-		BugSenseHandler.setup(this, "590eb975");
-		
-		
+
 		setContentView(R.layout.current_song);
 		
 		mStatusPollHandler = new StatusPollHandler();
